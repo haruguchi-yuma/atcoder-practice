@@ -1,3 +1,29 @@
+n = gets.to_i
+g = Array.new(n) { [] }
+
+(n-1).times do
+  a, b = gets.split.map(&:to_i)
+  g[a-1] << b-1
+  g[b-1] << a-1
+end
+
+dfs = ->(v ,p = -1) {
+  res = 1
+  g[v].each do |u|
+    next if u == p
+    res += dfs[u, v]
+  end
+  res
+}
+
+ans = n
+g[0].each do |v|
+  now = n - dfs[v, 0] # どの部分木を残せば良いかを計算
+  ans = [ans, now].min
+end
+
+p ans
+__END__
 class UnionFind
   attr_reader :parent, :siz
 

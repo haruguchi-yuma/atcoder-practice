@@ -1,5 +1,5 @@
 s = '1'
+m = [s] + (1..12).map { s += '1' }
+m.map!(&:to_i)
 
-m = ['1'] + (1..20).map { s += '1' }
-p m.repeated_permutation(3).to_a.map { _1.map(&:to_i).sum }.sort.uniq[gets.to_i - 1]
-
+p m.repeated_permutation(3).map(&:sum).uniq.sort[gets.to_i - 1]

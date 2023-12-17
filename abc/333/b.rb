@@ -1,17 +1,10 @@
 s1, s2 = gets.chomp.chars
 t1, t2 = gets.chomp.chars
 
+def long?(x, y)
+  a = [*'A'..'E']
+  d = (a.index(x) - a.index(y)).abs
+  d == 2 || d== 3
+end
 
-table = {
-  ['A', 'B'] => 1,
-  ['A', 'C'] => 2,
-  ['A', 'D'] => 2,
-  ['A', 'E'] => 1,
-  ['B', 'C'] => 1,
-  ['B', 'D'] => 2,
-  ['B', 'E'] => 2,
-  ['C', 'D'] => 1,
-  ['C', 'E'] => 2,
-}
-
-puts table[[s1, s2].sort] == table[[t1, t2].sort] ? 'Yes' : 'No'
+puts long?(s1, s2) == long?(t1, t2) ? 'Yes' : 'No'
