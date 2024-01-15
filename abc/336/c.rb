@@ -1,5 +1,8 @@
-n = gets.to_i
+n = gets.to_i - 1
+p n.to_s(5).to_i * 2
 
+
+__END__
 res = [0, 2, 4, 6, 8]
 
 ans = []
