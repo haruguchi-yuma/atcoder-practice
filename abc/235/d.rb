@@ -13,6 +13,7 @@ push = ->(v, d) {
 
 push[1, 0]
 
+# 最短路なのでBFS(幅優先探索)
 while v = que.shift
   d = dist[v]
 
