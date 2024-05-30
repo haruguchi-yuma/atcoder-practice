@@ -12,3 +12,21 @@ ans = 0
 end
 
 p ans
+
+
+__END__
+# uptoバージョン
+n, *a = $<.read.split.map(&:to_i)
+max = a.max
+h = a.tally
+h.default = 0
+
+ans = 0
+1.upto(max) do |x|
+  1.upto(max/x) do |y|
+    z = x * y
+    ans += h[x] * h[y] * h[z]
+  end
+end
+
+p ans
