@@ -15,3 +15,23 @@ ans = 0
 end
 
 p ans % MOD
+
+__END__
+# 自力で解いた
+MOD = 998244353
+n, m = gets.split.map(&:to_i)
+
+ans = 0
+60.times do |i|
+  next if m[i] == 0
+
+  q, r = (n+1).divmod(1<<(i+1))
+  res = q * (1 << i) % MOD
+  if r > 1<<i
+    res += r - (1<<i)
+  end
+
+  ans = (ans + res) % MOD
+end
+
+p ans
