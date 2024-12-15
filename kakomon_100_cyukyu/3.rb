@@ -16,3 +16,17 @@ n.downto(1) do |i|
 end
 
 puts 0
+
+# 別解2
+s = gets.chomp.chars
+size = s.size
+
+ans = []
+
+(0...size).each do |i|
+  (0...size).each do |j|
+    ans << s[i..j].size if /\A[ACGT]+\z/ =~ s[i..j].join
+  end
+end
+
+p ans.max
