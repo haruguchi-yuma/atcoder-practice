@@ -1,14 +1,10 @@
-n, x = gets.split.map(&:to_i)
-_ = gets
-p n, x
-ans = 0
+loop do
+  n, x = gets.split.map(&:to_i)
+  break if [n, x] == [0, 0]
 
-(1..n).each do |i|
-  ((i+1)..n).each do |j|
-    ((j+1)..n).each do |k|
-      ans += 1 if i + j + k == x
-    end
+  res = [*1..n].combination(3).count do |ary|
+    ary.sum == x
   end
-end
 
-p ans
+  puts res
+end
