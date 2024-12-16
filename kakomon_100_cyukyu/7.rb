@@ -16,7 +16,21 @@ end
 p ans
 
 __END__
-# 入力例
+n = gets.to_i
+xy = Array.new(n) { gets.split.map(&:to_i) }
+h = {}
+xy.each { |x, y| h[[x, y]] = true }
+ans = []
+xy.combination(2).each do |(x1, y1), (x2, y2)|
+  c = (y1-y2).abs
+  d = (x2-x1).abs
+  if h[[x1+c, y1+d]] && h[[x2+c, y2+d]]
+    ans << c**2 + d**2
+  end
+end
+
+p ans.max || 0
+
 10
 9 4
 4 3
