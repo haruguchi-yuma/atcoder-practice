@@ -14,4 +14,3 @@ h = {}
 }
 
 m.each { |mm| puts h[mm] ? 'yes' : 'no'}
-
