@@ -6,7 +6,7 @@ ans = 0
 
 (1<<n).times do |bit|
   ans += 1 if ks.each_with_index.all? { |(_, *s), i|
-    s.map { bit[_1-1] }.sum & 1 == p[i]
+    s.sum { bit[_1-1] } & 1 == p[i]
   }
 end
 
