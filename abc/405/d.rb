@@ -1,3 +1,33 @@
+h, w = gets.split.map(&:to_i)
+s = Array.new(h) { gets.chomp.chars }
+
+que = []
+h.times do |i|
+  w.times do |j|
+    if s[i][j] == 'E'
+      que << [i, j]
+    end
+  end
+end
+
+di = [0, -1, 0, 1]
+dj = [-1, 0, 1, 0]
+dc = "<^>v".chars
+
+while (i, j = que.shift)
+  4.times do |k|
+    ni, nj = i + di[k], j + dj[k]
+
+    next if ni < 0 || ni >= h || nj < 0 || nj >= w
+    next if s[ni][nj] != '.'
+
+    que << [ni, nj]
+    s[ni][nj] = dc[k^2] # 180°反転のため XOR　2をとる
+  end
+end
+
+puts s.map(&:join)
+__END__
 INF = 1001001001
 h, w = gets.split.map(&:to_i)
 s = Array.new(h) { gets.chomp.chars }
