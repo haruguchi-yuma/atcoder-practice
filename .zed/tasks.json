@@ -1,0 +1,32 @@
+[
+  {
+    "label": "ruby: run",
+    "command": "ruby",
+    "args": ["$ZED_FILE"],
+    "use_new_terminal": false,
+    "reveal": "always",
+  },
+  {
+    "label": "oj: download samples",
+    "command": "oj d \"$(pbpaste)\"",
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "reveal": "always",
+    "shell": "system",
+  },
+  {
+    "label": "oj: test ruby",
+    "command": "oj t -c \"ruby $ZED_FILE\" -d $ZED_DIRNAME/test",
+    "use_new_terminal": false,
+    "reveal": "always",
+    "shell": "system",
+  },
+  {
+    "label": "oj: submit ruby",
+    "command": "oj s -l 6087 $ZED_FILE",
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "reveal": "always",
+    "shell": "system",
+  },
+]
