@@ -15,14 +15,15 @@ oj login https://atcoder.jp/
 
 ## 問題を解く手順
 
-Zedのタスクは `cmd-shift-P` → `task: spawn` から実行。
-
-1. **ディレクトリを作る** — `abc/999/` を作り、`a.rb` 〜 `d.rb` を置く
+1. **ディレクトリを作る** — `mkdir -p abc/456/d && cd abc/456/d`
 2. **サンプルを落とす** — 問題ページのURLをコピーして `oj: download samples`
-   （`pbpaste` を読むので、**URLをクリップボードに入れてから**実行。落ちてくる先は `test/`）
-3. **実行** — `ruby: run`（`$ZED_FILE` をそのまま実行、標準入力は手打ち）
-4. **テスト** — `oj: test ruby`（`test/` 配下の全ケースを検証）
-5. **提出** — `oj: submit ruby`（`-l 6087` = Ruby）
+   → `abc/456/d/test/` に入る
+3. **`d.rb` を書く** — ファイル名は問題記号に合わせる
+4. **実行** — `ruby: run`
+5. **テスト** — `oj: test ruby`
+6. **提出** — `oj: submit ruby`（`-l 6087` = Ruby）
+
+`oj d` と `oj t` は `$ZED_DIRNAME` を見るので、**問題ディレクトリ内のファイルを開いた状態**でタスクを実行すること。
 
 ## 詰まったとき
 

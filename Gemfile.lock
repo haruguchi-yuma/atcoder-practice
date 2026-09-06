@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    sorted_containers (1.1.0)
+
+PLATFORMS
+  arm64-darwin-23
+  ruby
+
+DEPENDENCIES
+  sorted_containers (>= 1.0)
+
+CHECKSUMS
+  sorted_containers (1.1.0) sha256=9928f6fbaf6d3cc1d0f8116df823d2f4e01ea6506839baa7029233c40039141c
+
+BUNDLED WITH
+  4.0.3
